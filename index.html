@@ -1,37 +1,310 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WhiteKnight - AI Litigation Assistant</title>
-    <style>
-        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; }
-        h1 { color: #333; }
-        .logo { width: 100px; height: 100px; background: #222; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; margin-bottom: 20px; }
-    </style>
-</head>
-<body>
-    <div class="logo">WK</div>
-    <h1>WhiteKnight</h1>
-    <h2>AI-Assisted Legal Support for Pro Se Litigants</h2>
-    <p>WhiteKnight is a software platform that provides self-help legal document organization and case management tools for individuals representing themselves in legal proceedings.</p>
-    
-    <h3>Features</h3>
-    <ul>
-        <li>AI Document Analysis</li>
-        <li>Court Document Generation</li>
-        <li>Strategic Guidance</li>
-        <li>Case Management</li>
-    </ul>
-    
-    <h3>Legal Disclaimer</h3>
-    <p><strong>WhiteKnight is NOT a lawyer, NOT a law firm, and does NOT provide legal advice.</strong> We provide general legal information and AI-powered organizational tools only. All AI-generated content is for informational purposes and is NOT a substitute for advice from a licensed attorney.</p>
-    
-    <h3>Contact</h3>
-    <p>For support, contact us through the app.</p>
-    
-    <hr>
-    <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
-    <p>&copy; 2025 WhiteKnight. All rights reserved.</p>
-</body>
-</html>
+<!DOCTYPE html><html lang="en" class="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>White Knight Law</title><meta name="description" content="Tools that help organizations tend to information, document timelines, and coordinate resources."><link rel="icon" href="/icon.png" type="image/png"/><meta name="next-size-adjust"><link rel="stylesheet" href="/styles.css"/></head><body class="__variable_d8ebd1 __variable_896f76 __variable_a3570b __variable_952d24 font-sans">
+<next-route-announcer style="position: absolute;"></next-route-announcer><style>
+        .wk-root {
+          font-family: var(--font-source-sans), 'Source Sans 3', sans-serif;
+          background: #FAF8F5;
+          color: #3A342C;
+          font-size: 16px;
+          line-height: 1.65;
+          min-height: 100vh;
+        }
+        .wk-root * { box-sizing: border-box; }
+
+        /* HEADER */
+        .wk-header {
+          background: #A89880;
+          padding: 0 48px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          height: 62px;
+          position: sticky;
+          top: 0;
+          z-index: 100;
+        }
+        .wk-logo {
+          font-family: var(--font-garamond), 'EB Garamond', serif;
+          font-size: 20px;
+          font-weight: 500;
+          color: #F0F4F0;
+          letter-spacing: 0.02em;
+          text-decoration: none;
+        }
+        .wk-logo span { color: #D4CEC7; font-style: italic; }
+        .wk-nav { display: flex; align-items: center; gap: 30px; }
+        .wk-nav a {
+          font-size: 12px;
+          font-weight: 400;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          color: #D4CEC7;
+          text-decoration: none;
+          transition: color 0.2s;
+        }
+        .wk-nav a:hover { color: #F0F4F0; }
+        .wk-btn-header {
+          font-size: 12px;
+          font-weight: 500;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          background: transparent;
+          color: #F0F4F0;
+          border: 1px solid rgba(157,176,159,0.45);
+          padding: 7px 18px;
+          border-radius: 2px;
+          text-decoration: none;
+          transition: background 0.2s, border-color 0.2s;
+          cursor: pointer;
+        }
+        .wk-btn-header:hover {
+          background: rgba(157,176,159,0.15);
+          border-color: rgba(157,176,159,0.7);
+        }
+
+        /* HERO */
+        .wk-hero {
+          background: #A89880;
+          padding: 96px 48px 80px;
+          text-align: center;
+          position: relative;
+          overflow: hidden;
+        }
+        .wk-hero::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(ellipse at 50% 0%, rgba(107,127,110,0.18) 0%, transparent 65%);
+          pointer-events: none;
+        }
+        .wk-hero::after {
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: 0; left: 0; right: 0;
+          height: 48px;
+          background: #FAF8F5;
+          clip-path: ellipse(58% 100% at 50% 100%);
+        }
+        .wk-hero-eyebrow {
+          font-size: 11.5px;
+          font-weight: 600;
+          letter-spacing: 0.22em;
+          text-transform: uppercase;
+          color: #FFFFFF;
+          margin-bottom: 22px;
+          opacity: 0.9;
+        }
+        .wk-hero h1 {
+          font-family: var(--font-garamond), 'EB Garamond', serif;
+          font-size: clamp(32px, 5vw, 54px);
+          font-weight: 400;
+          color: #F0F4F0;
+          line-height: 1.22;
+          max-width: 680px;
+          margin: 0 auto 26px;
+        }
+        .wk-hero h1 em { font-style: italic; color: #D4CEC7; }
+        .wk-hero-sub {
+          font-size: 17px;
+          font-weight: 300;
+          color: rgba(240,244,240,0.90);
+          max-width: 500px;
+          margin: 0 auto 40px;
+          line-height: 1.78;
+        }
+        .wk-hero-rule {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          max-width: 140px;
+          margin: 0 auto 38px;
+        }
+        .wk-hero-rule::before,
+        .wk-hero-rule::after {
+          content: '';
+          flex: 1;
+          height: 1px;
+          background: rgba(157,176,159,0.35);
+        }
+        .wk-hero-rule-dot {
+          width: 4px; height: 4px;
+          border-radius: 50%;
+          background: #D4CEC7;
+          opacity: 0.5;
+        }
+        .wk-btn-cta {
+          display: inline-block;
+          font-size: 12px;
+          font-weight: 500;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          background: #B8B0A6;
+          color: #F0F4F0;
+          padding: 12px 28px;
+          border-radius: 2px;
+          text-decoration: none;
+          transition: background 0.2s;
+          cursor: pointer;
+          border: none;
+        }
+        .wk-btn-cta:hover { background: #C0AA90; }
+
+        /* SHARED SECTION */
+        .wk-section {
+          max-width: 960px;
+          margin: 0 auto;
+          padding: 76px 48px;
+        }
+        .wk-eyebrow {
+          font-size: 11px;
+          font-weight: 500;
+          letter-spacing: 0.16em;
+          text-transform: uppercase;
+          color: #B8B0A6;
+          margin-bottom: 12px;
+        }
+        .wk-section h2 {
+          font-family: var(--font-garamond), 'EB Garamond', serif;
+          font-size: clamp(26px, 3.5vw, 38px);
+          font-weight: 400;
+          color: #3A342C;
+          margin-bottom: 18px;
+          line-height: 1.22;
+        }
+        .wk-section-intro {
+          font-size: 17px;
+          font-weight: 300;
+          color: #6E665E;
+          max-width: 620px;
+          line-height: 1.78;
+          margin-bottom: 44px;
+        }
+
+        /* MISSION */
+        .wk-mission-bg {
+          background: #FFFFFF;
+          border-bottom: 1px solid #E4DED7;
+        }
+        .wk-mission-quote {
+          border-left: 3px solid #B8B0A6;
+          padding-left: 28px;
+          margin: 28px 0 32px;
+        }
+        .wk-mission-quote p {
+          font-family: var(--font-garamond), 'EB Garamond', serif;
+          font-size: 23px;
+          font-style: italic;
+          font-weight: 400;
+          color: #3A342C;
+          line-height: 1.65;
+        }
+
+        /* CAPABILITIES */
+        .wk-cap-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 1px;
+          background: #E4DED7;
+          border: 1px solid #E4DED7;
+        }
+        .wk-cap-card {
+          background: #FFFFFF;
+          padding: 28px 22px;
+          transition: background 0.2s;
+        }
+        .wk-cap-card:hover { background: #FAF8F5; }
+        .wk-cap-icon {
+          width: 26px; height: 26px;
+          color: #B8B0A6;
+          margin-bottom: 14px;
+        }
+        .wk-cap-card strong {
+          display: block;
+          font-family: var(--font-garamond), 'EB Garamond', serif;
+          font-size: 18px;
+          font-weight: 500;
+          color: #3A342C;
+          margin-bottom: 7px;
+        }
+        .wk-cap-card p {
+          font-size: 14px;
+          font-weight: 300;
+          color: #B0A89F;
+          line-height: 1.65;
+        }
+
+        /* CTA STRIP */
+        .wk-cta-strip {
+          background: #EEE9E3;
+          border-top: 1px solid #C4D6C6;
+          padding: 68px 48px;
+          text-align: center;
+        }
+        .wk-cta-strip h2 {
+          font-family: var(--font-garamond), 'EB Garamond', serif;
+          font-size: 32px;
+          font-weight: 400;
+          color: #3A342C;
+          margin-bottom: 10px;
+        }
+        .wk-cta-strip p {
+          font-size: 16px;
+          font-weight: 300;
+          color: #6E665E;
+          margin-bottom: 28px;
+        }
+
+        /* FOOTER */
+        .wk-footer {
+          border-top: 1px solid #E4DED7;
+          padding: 38px 48px;
+          background: #FFFFFF;
+        }
+        .wk-footer-inner {
+          max-width: 960px;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          gap: 14px;
+        }
+        .wk-footer-top {
+          display: flex;
+          align-items: baseline;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          gap: 8px;
+        }
+        .wk-footer-logo {
+          font-family: var(--font-garamond), 'EB Garamond', serif;
+          font-size: 16px;
+          color: #3A342C;
+          font-weight: 500;
+        }
+        .wk-footer-ein {
+          font-size: 12px;
+          color: #B0A89F;
+          letter-spacing: 0.04em;
+        }
+        .wk-footer-disclaimer {
+          font-size: 12px;
+          font-weight: 300;
+          color: #B0A89F;
+          line-height: 1.75;
+          max-width: 700px;
+          padding-top: 14px;
+          border-top: 1px solid #E4DED7;
+        }
+        .wk-footer-copy {
+          font-size: 11px;
+          color: #C0BBB2;
+          letter-spacing: 0.04em;
+        }
+
+        @media (max-width: 700px) {
+          .wk-header { padding: 0 20px; }
+          .wk-nav { display: none; }
+          .wk-hero, .wk-cta-strip { padding: 64px 24px 52px; }
+          .wk-section { padding: 52px 24px; }
+          .wk-footer { padding: 30px 24px; }
+        }
+      </style><div class="wk-root"><header class="wk-header"><span class="wk-logo">White Knight <span>Law</span></span><nav class="wk-nav"><a href="#mission">Mission</a><a href="#capabilities">Capabilities</a><a href="/crime-victim-advocate">Victim Advocate</a><a href="/who-we-are">About</a><a href="/contact-us">Contact</a></nav></header><section class="wk-hero"><p class="wk-hero-eyebrow">501(c)(3) Nonprofit &nbsp;·&nbsp; EIN 42-1827954</p><h1>Every mission deserves<br><em>great infrastructure.</em></h1><p class="wk-hero-sub">White Knight Law builds tools that help organizations tend to information, document timelines, and coordinate resources — with integrity, care, and consistency.</p><div class="wk-hero-rule"><div class="wk-hero-rule-dot"></div></div></section><div class="wk-mission-bg" id="mission"><section class="wk-section"><p class="wk-eyebrow">Mission</p><h2>Our Concern</h2><div class="wk-mission-quote"><p>White Knight Law exists to serve organizations working toward a more just, transparent, and human-centered world — by improving how information is gathered, shared, and understood.</p></div><p class="wk-section-intro" style="margin-bottom: 0px;">Verified timelines, undisputed documentation, and organized records are the foundation of any credible legal matter. We build tools that help organizations arrive at that foundation — so the work that follows can speak for itself.</p></section></div><section class="wk-section" id="capabilities"><p class="wk-eyebrow">Capabilities</p><h2>How We Serve</h2><p class="wk-section-intro">Our tools support organizations from first intake to final record — keeping information organized, timelines verified, and documentation ready when it matters.</p><div class="wk-cap-grid"><div class="wk-cap-card"><svg class="wk-cap-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414A1 1 0 0119 9.414V19a2 2 0 01-2 2z"></path></svg><strong>Resource Tools</strong><p>Helps organizations identify publicly available programs and services for the communities they are called to serve.</p></div><div class="wk-cap-card"><svg class="wk-cap-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16M4 10h16M4 14h10M4 18h6"></path></svg><strong>Information Management</strong><p>Keeps records organized, complete, and retrievable — so nothing is missing when it counts.</p></div><div class="wk-cap-card"><svg class="wk-cap-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg><strong>Intake Tools</strong><p>Structured workflows for collecting information consistently from the very first interaction.</p></div><div class="wk-cap-card"><svg class="wk-cap-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg><strong>Timeline Tools</strong><p>A faithful record of events, organized in order, so nothing important is lost or overlooked.</p></div></div></section><section class="wk-cta-strip"><h2>Come as you are.</h2><p>Request access to see how our tools can support the work your organization is called to do.</p></section><footer class="wk-footer"><div class="wk-footer-inner"><div class="wk-footer-top"><span class="wk-footer-logo">White Knight Law Inc</span><span class="wk-footer-ein">EIN: 42-1827954 &nbsp;·&nbsp; 501(c)(3) Nonprofit</span></div><p class="wk-footer-disclaimer">White Knight Law Inc is a registered nonprofit organization. Contact: admin@whiteknightlaw.org<br>White Knight Law Inc provides software tools and educational resources for information organization and resource discovery. White Knight Law Inc does not provide legal advice, legal representation, counseling, therapy, medical services, investigative services, law enforcement services, crisis intervention services, financial advice, or emergency services.</p><p class="wk-footer-copy">© 2026 White Knight Law Inc. All rights reserved. &nbsp;·&nbsp; whiteknightlaw.org</p></div></footer></div></body></html>
